@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hor Anuwad – Santhali Translator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav><div class="logo">Hor<span>Anuwad</span></div><div><a href="#translator">Translator</a><a href="#about">About</a><a href="#how">How it works</a></div></nav>
+<div class="hero"><div class="ol">ᱥᱟᱱᱛᱟᱲᱤ</div><h1>Translate Santhali into any language.</h1><p>Type in Ol Chiki, Devanagari, Bengali or Roman script, or speak using voice input, and get a translation in seconds.</p></div>
+</header>
+
+<main id="translator">
+<div class="card">
+ <div class="bar">
+  <label>From</label><div class="pill">Santhali (ᱥᱟᱱᱛᱟᱲᱤ)</div>
+  <span aria-hidden="true">→</span>
+  <label for="to">To</label>
+  <select id="to"></select>
+  <label for="vl" style="margin-left:auto">Voice language</label>
+  <select id="vl">
+   <option value="hi-IN">Hindi (hi-IN)</option>
+   <option value="bn-IN">Bengali (bn-IN)</option>
+   <option value="en-IN">English India (en-IN)</option>
+   <option value="sat-IN">Santali (sat-IN)</option>
+  </select>
+ </div>
+ <div class="grid">
+  <div class="pane">
+   <h3>Santhali text</h3>
+   <textarea id="src" placeholder="Type or speak Santhali here…" aria-label="Santhali input"></textarea>
+   <div class="keys" id="keys" aria-label="Ol Chiki keys"></div>
+   <div class="tools">
+    <button class="btn mic" id="mic">🎤 Voice input</button>
+    <button class="btn" id="clr">Clear</button>
+    <span class="status" id="cnt">0 / 2000</span>
+   </div>
+  </div>
+  <div class="pane">
+   <h3 id="tl">Translation</h3>
+   <div class="out ph" id="out" aria-live="polite">Your translation will appear here.</div>
+   <div class="tools">
+    <button class="btn" id="spk">🔊 Listen</button>
+    <button class="btn" id="cpy">Copy</button>
+   </div>
+  </div>
+ </div>
+ <div class="act">
+  <span class="status" id="st">Ready.</span>
+  <button class="btn primary" id="go">Translate</button>
+ </div>
+</div>
+<div class="note"><b>Voice tip:</b> most browsers (Chrome, Edge) don't recognise Santhali speech yet. Pick Hindi or Bengali as the voice language and speak, or use Santali (sat-IN) if your device supports it. You can edit the text before translating.</div>
+
+<section class="info" id="about">
+ <div class="cols">
+  <div><h4>Multi-script input</h4><p>Supports Ol Chiki, Devanagari, Bengali, Odia and Latin transliteration of Santhali.</p></div>
+  <div><h4>Voice enabled</h4><p>Dictate with your microphone and listen to the translation read aloud.</p></div>
+  <div><h4>30 languages</h4><p>Translate into English, Hindi, Bengali, and many more languages.</p></div>
+ </div>
+</section>
+<section class="info" id="how">
+ <div class="cols">
+  <div><h4>1. Input</h4><p>Type or speak Santhali text into the left panel.</p></div>
+  <div><h4>2. Translate</h4><p>The text is sent to the Node.js server, which calls the Gemini API.</p></div>
+  <div><h4>3. Output</h4><p>Read, copy, or listen to the result in the target language.</p></div>
+ </div>
+</section>
+</main>
+<footer>College Project · Santhali Language Translator · Santhali is a low-resource language, so please verify important translations.</footer>
+<script src="app.js"></script>
+</body>
+</html>
